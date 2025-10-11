@@ -21,11 +21,32 @@ local ZonePlus = require(Packages:WaitForChild("Zone"))
 local Service = {}
 local Zones = {
 }
-function Service.CanJoin(): boolean
-    
+
+function Service.JoinParty(Player: Player, zoneIndex: number)
+    local ZoneInfo = Zones[zoneIndex] :: Party
+
+    if ZoneInfo.Owner == "None" then
+        ZoneInfo.Owner = Player.Name
+        --> Prompts player selection
+    end
+end
+
+function Service.CanJoin(zoneIndex: number): boolean
+    local ZoneInfo: Party = Zones[zoneIndex]
+    if ZoneInfo.Owner == "None" then
+        return true
+    end
+
+    local ownerUser = Players:FindFirstChild(ZoneInfo.Owner)
+    if not ownerUser then
+        return false
+    end
+
+
 end
 function Service.CreateZone(colliderPart: BasePart)
-    Zones[tonumber(colliderPart.Name)] = {
+    local zoneIndex = tonumber(colliderPart.Name)
+    Zones[zoneIndex] = {
         Players = {},
         Owner = "Invalid",
         Info = Service.PartyService.slideDefaultPartySettings()
@@ -35,6 +56,10 @@ function Service.CreateZone(colliderPart: BasePart)
 
     ZoneContainer.playerEntered:Connect(function(player: Player)
         print(string.format("%s has entered", player.Name))
+
+        if Service.CanJoin(zoneIndex) then
+            Service.JoinParty(player, zoneIndex)
+        end
     end)
 end
 
