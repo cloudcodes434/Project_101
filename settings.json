@@ -1,0 +1,6 @@
+{
+  "luau-lsp.require.mode": "relativeToSourceMap",
+  "luau-lsp.sourcemap.file": "sourcemap.json",
+  "luau-lsp.diagnostics.enable": true,
+  "luau-lsp.completion.enable": true
+}
