@@ -1,5 +1,5 @@
 [package]
-name = "natsuki/project_101"
+name = "co/project-101"  
 version = "0.1.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
@@ -7,3 +7,4 @@ realm = "shared"
 [dependencies]
 promise = "evaera/promise@4.0.0"
 maid = "flamenco687/maid@3.2.2"
+zone = "chabba100/zone@5.0.6"
