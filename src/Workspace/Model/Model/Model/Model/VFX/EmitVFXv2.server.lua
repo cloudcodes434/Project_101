@@ -5,7 +5,7 @@ local ChanceWait = 0.3 -- waits before rolling the chance again
 while true do
 	local emitchance = math.random(1, EmitChance)
 
-	print(EmitChance)
+	--print(EmitChance)
 	task.wait(ChanceWait)
 	if emitchance ~= 1 then
 
