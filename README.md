@@ -3,8 +3,6 @@
 
 ## Contributors ✨
 
-Thanks goes to raiar:
-
 <table>
   <tbody>
     <tr>
