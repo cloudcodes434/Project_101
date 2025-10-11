@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "strict": true,
+        "types": ["rbxts"],
+        "moduleResolution": "node", 
+        "esModuleInterop": true
+    },
+    "include": ["src/**/*"]
+}
