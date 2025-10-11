@@ -1,28 +1,25 @@
---// Services -- \\ 
+
+-- // Services -- \\
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ServerStorage = game:GetService("ServerStorage") 
 
-
+-- // Variables -- \\ 
 local GameFolder = ReplicatedStorage:WaitForChild("Game")
 local Libraries = GameFolder:WaitForChild("Libraries")
 
-
+-- // Modules -- \\
 local Library = require(Libraries:WaitForChild("Library"))
 
+local Service = {}
+local DefaultPartySettings = {
 
-local Enmy_Rig = ServerStorage.Enmies
+}
 
-local Service = { }
-
-
-function Service:Enmy_Spawn_Location()
-    print("Spawn")
-end 
+function Service.slideDefaultPartySettings()
+    return DefaultPartySettings
+end
 
 function Service:Start()
-    for _, v in ipairs(Enmy_Rig:GetChildren()) do 
-       print(v.Name)
-    end
 end
+
 return Service
