@@ -1,0 +1,25 @@
+{
+  "projectName": "Project_101",
+  "projectOwner": "cloudcodes434",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "ember",
+  "contributors": [
+    {
+      "login": "raiarmadeit",
+      "name": "raiarmadeit",
+      "avatar_url": "https://avatars.githubusercontent.com/u/168317480?v=4",
+      "profile": "https://github.com/raiarmadeit",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": true
+}
