@@ -16,11 +16,12 @@ function Service:Spawn()
     
 end
 
-function Service.GetWave(): number
-    
+function Service.ReturnWaveStage(): number
+    return 1
 end
 
 function Service:Start()
+   
 end
 
 return Service
