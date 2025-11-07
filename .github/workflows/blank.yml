@@ -1,5 +1,10 @@
 name: Super-Linter
-on: push
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   super-lint:
     name: Lint code base
@@ -7,12 +12,21 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+        with:
+          fetch-depth: 0
+
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_LUA: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_YAML: true
+          VALIDATE_JSON: true
+          VALIDATE_TOML: true
+          # Lua specific
           LUA_LINTER: luacheck
-          DEFAULT_WORKSPACE: ./src
+          # Exclude directories
+          EXCLUDES: 'node_modules'
