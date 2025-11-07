@@ -1,18 +1,15 @@
-name: Super-Linter
+name: Code Lint
 on: push
 jobs:
-  super-lint:
-    name: Lint code base
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
-      - name: Run Super-Linter
-        uses: github/super-linter@v3
+      - uses: actions/checkout@v3
+      
+      - name: Super-Linter
+        uses: super-linter/super-linter@v4.9.8
         env:
-          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: /
-
+          VALIDATE_LUA: true
           LUA_LINTER: luacheck
+          VALIDATE_ALL_CODEBASE: true
