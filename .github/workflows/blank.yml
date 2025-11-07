@@ -26,7 +26,13 @@ jobs:
           VALIDATE_YAML: true
           VALIDATE_JSON: true
           VALIDATE_TOML: true
+          # Disable JavaScript/TypeScript validators
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_TYPESCRIPT_ES: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_TYPESCRIPT_STANDARD: false
           # Lua specific
           LUA_LINTER: luacheck
           # Exclude directories
-          EXCLUDES: 'node_modules'
+          FILTER_REGEX_EXCLUDE: .*node_modules/.*
+          EXCLUDED_DIRECTORIES: 'node_modules'
